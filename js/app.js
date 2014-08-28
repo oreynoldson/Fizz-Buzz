@@ -4,11 +4,8 @@
 //For numbers divisible by 3 and 5 we want to print fizzbuzz
 $(document).ready(function(){
 
-	var userNum = function(){
-		return Number(prompt("Please choose a whole number between 1 and 100","Type number here!"));
-	};
+	var userInput =	Number(prompt("Please choose a whole number between 1 and 100","Type number here!"));
 
-	var userInput = userNum();
 
 		var play = function() {
 		for( var count = 1; count <= userInput; count++){
@@ -25,20 +22,22 @@ $(document).ready(function(){
 	} // end of play
 
 
+
 		var game = function() {
-			if(userInput <= 0 || userInput >100){
-				alert("Please choose a number between 1 and 100");
-			}else if (userInput % 1 != 0){
-				alert("Please choose a WHOLE number between 1 and 100");
-			} else {
-				// alert("Lets run the program!");
-				play();
-			}
+			while(true){
+					userInput;
+					if(userInput > 0 && userInput <= 100 && userInput % 1 === 0 && !isNaN(userInput)){
+						play();
+						break;
+					}else{
+						alert("Please choose a WHOLE number between 1 and 100");
+					}//end of else
+			}//end of while loop
+			
 		
 		}; //end of game
 
-
-game();
+game();//Run fizbuzz game
 
 
 }); // end of doc ready
@@ -53,3 +52,15 @@ game();
 // 		} else {
 // 			alert("Nice Pick");
 // 		}
+
+// userInput <= 0 || userInput >100 || userInput % 1 != 0
+
+// if(userInput <= 0 || userInput >100){
+			// 	alert("Please choose a number between 1 and 100");
+			// 	userNum();
+			// }else if (userInput % 1 != 0){
+			// 	alert("Please choose a WHOLE number between 1 and 100");
+			// } else {
+			// 	// alert("Lets run the program!");
+			// 	play();
+			// }
