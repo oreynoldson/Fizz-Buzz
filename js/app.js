@@ -24,7 +24,7 @@ $(document).ready(function(){
 var checkValue = function(){
 var userInput = Number(prompt("Please choose a whole number between 1 and 100","Type number here!"));
  	 
- 	if(userInput > 0 && userInput <= 100 && !isNaN(userInput)){
+ 	if(userInput > 0 && userInput <= 100 && userInput % 1 === 0 && !isNaN(userInput)){
  		play(userInput);
  	} else {
  		alert("Please choose a WHOLE number between 1 and 100");
